@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { formatPrice } from '@/lib/utils';
 import areasData from '@/lib/data/areas.json';
@@ -26,7 +27,9 @@ export default function AreaDetailPage({ params }: Props) {
         <div className="min-h-screen bg-background">
             {/* Hero */}
             <div className="relative h-[40vh] md:h-[50vh]">
-                <img src={area.image} alt={area.name} className="w-full h-full object-cover" />
+                <div className="relative w-full h-full">
+                    <Image src={area.image} alt={area.name} fill className="object-cover" />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
                     <div className="max-w-7xl mx-auto">

@@ -1,6 +1,7 @@
 import { getAllBlogPosts } from '@/lib/supabase';
 import { BlogPost } from '@/lib/types';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const revalidate = 60;
 
@@ -55,10 +56,11 @@ export default async function ArticlesPage() {
                             >
                                 <div className="relative h-48 overflow-hidden">
                                     {post.hero_image_url ? (
-                                        <img
+                                        <Image
                                             src={post.hero_image_url}
                                             alt={post.title}
-                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                            fill
+                                            className="object-cover group-hover:scale-110 transition-transform duration-500"
                                         />
                                     ) : (
                                         <div className="w-full h-full bg-cream" />

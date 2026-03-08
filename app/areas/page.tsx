@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { formatPrice } from '@/lib/utils';
 import areasData from '@/lib/data/areas.json';
 import { Area } from '@/lib/types';
@@ -31,7 +32,7 @@ export default function AreasPage() {
                             className="group rounded-2xl overflow-hidden bg-white border border-gray-100 hover:shadow-xl hover:border-accent/20 transition-all duration-300"
                         >
                             <div className="relative h-48 overflow-hidden">
-                                <img src={area.image} alt={area.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                <Image src={area.image} alt={area.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
                             </div>
                             <div className="p-5">
                                 <h2 className="text-lg font-heading font-semibold text-foreground mb-1 group-hover:text-accent transition-colors">{area.name}</h2>

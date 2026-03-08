@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { BlogPost } from '@/lib/types';
 import ScrollReveal, { StaggerContainer, StaggerItem } from '@/components/animations/ScrollReveal';
 import { WordReveal } from '@/components/animations/TextReveal';
@@ -36,10 +37,11 @@ export default function LatestNewsClient({ posts }: LatestNewsClientProps) {
                                 <Link href={`/news/articles/${post.slug}`} className="group block">
                                     <div className="rounded-2xl overflow-hidden aspect-[3/2] mb-5">
                                         {post.hero_image_url ? (
-                                            <img
+                                            <Image
                                                 src={post.hero_image_url}
                                                 alt={post.title}
-                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                                fill
+                                                className="object-cover group-hover:scale-105 transition-transform duration-700"
                                             />
                                         ) : (
                                             <div className="w-full h-full bg-cream" />

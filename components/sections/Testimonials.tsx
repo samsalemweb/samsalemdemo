@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Testimonial } from '@/lib/types';
 import testimonialsData from '@/lib/data/testimonials.json';
@@ -41,10 +42,11 @@ export default function Testimonials() {
     return (
         <section className="py-16 md:py-28 relative overflow-hidden">
             <div className="absolute inset-0 z-0">
-                <img
+                <Image
                     src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=1920&q=60"
                     alt=""
-                    className="w-full h-full object-cover opacity-10"
+                    fill
+                    className="object-cover opacity-10"
                 />
             </div>
 

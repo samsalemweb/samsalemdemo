@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import listingsData from '@/lib/data/listings.json';
 import { Listing } from '@/lib/types';
 import { formatPrice } from '@/lib/utils';
@@ -26,10 +27,11 @@ export default function ListingDetailPage({ params }: Props) {
         <div className="min-h-screen bg-background">
             {/* Hero Image */}
             <div className="relative h-[50vh] md:h-[60vh]">
-                <img
+                <Image
                     src={listing.images[0]}
                     alt={listing.title}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
@@ -96,7 +98,9 @@ export default function ListingDetailPage({ params }: Props) {
                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                                     {listing.images.slice(1).map((img, i) => (
                                         <div key={i} className="h-48 rounded-xl overflow-hidden">
-                                            <img src={img} alt={`View ${i + 2}`} className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" />
+                                            <div className="relative w-full h-full">
+                                                <Image src={img} alt={`View ${i + 2}`} fill className="object-cover hover:scale-110 transition-transform duration-300" />
+                                            </div>
                                         </div>
                                     ))}
                                 </div>

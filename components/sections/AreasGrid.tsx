@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Area } from '@/lib/types';
 import areasData from '@/lib/data/areas.json';
 import ScrollReveal, { StaggerContainer, StaggerItem } from '@/components/animations/ScrollReveal';
@@ -34,10 +35,11 @@ export default function AreasGrid() {
                             <HoverCard lift={-6} scaleAmount={1.02}>
                                 <Link href={`/areas/${area.slug}`} className="group block">
                                     <div className="rounded-2xl overflow-hidden aspect-[4/3] mb-4">
-                                        <img
+                                        <Image
                                             src={area.image}
                                             alt={area.name}
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-700"
                                         />
                                     </div>
                                     <div className="flex items-center justify-between">

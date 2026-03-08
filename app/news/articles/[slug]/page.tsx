@@ -2,6 +2,7 @@ import { getBlogPostBySlug, getAllBlogSlugs } from '@/lib/supabase';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const revalidate = 60;
 
@@ -51,10 +52,11 @@ export default async function BlogPostPage({ params }: Props) {
             {/* Hero Image */}
             {post.hero_image_url && (
                 <div className="relative h-[40vh] md:h-[50vh]">
-                    <img
+                    <Image
                         src={post.hero_image_url}
                         alt={post.title}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">

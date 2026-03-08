@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Listing } from '@/lib/types';
 import { formatPrice } from '@/lib/utils';
 
@@ -20,10 +21,11 @@ export default function ListingCard({ listing }: ListingCardProps) {
         >
             {/* Image */}
             <div className="relative h-56 overflow-hidden">
-                <img
+                <Image
                     src={listing.images[0]}
                     alt={listing.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute top-3 left-3">
                     <span
