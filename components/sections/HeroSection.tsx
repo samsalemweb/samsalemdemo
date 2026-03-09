@@ -27,7 +27,7 @@ export default function HeroSection() {
                 muted
                 loop
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover hidden md:block"
+                className="absolute inset-0 w-full h-full object-cover"
             >
                 <source
                     src="https://res.cloudinary.com/djtzs6kuv/video/upload/v1773072171/1396928-uhd_4096_2160_24fps_wnmpey.mp4"
@@ -35,8 +35,7 @@ export default function HeroSection() {
                 />
             </video>
 
-            {/* Mobile fallback */}
-            <div className="absolute inset-0 bg-gray-900 md:hidden" />
+
 
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/50" />
