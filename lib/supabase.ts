@@ -85,7 +85,22 @@ export async function getAllPresaleListings(): Promise<PresaleListing[]> {
         return [];
     }
 
-    return data as PresaleListing[];
+    // Map broken remote images to user-provided local images
+    const localImageMap: Record<string, string> = {
+        'templeton': '/2021_05_24_06_18_22_templeton6.jpeg',
+        'frame': '/111-750x450.jpeg',
+        'hue': '/2022_08_29_09_49_51_hue_image4-1024x640-1.jpg',
+        'executive-on-the-park': '/111-750x450.jpeg',
+    };
+
+    const mappedData = data.map(item => {
+        if (item.slug && localImageMap[item.slug]) {
+            item.hero_image_url = localImageMap[item.slug];
+        }
+        return item;
+    });
+
+    return mappedData as PresaleListing[];
 }
 
 // Fetch single listing by slug with images
@@ -113,9 +128,36 @@ export async function getListingBySlug(slug: string): Promise<PresaleListing | n
         console.error('Error fetching listing images:', imagesError);
     }
 
+    // Fallback for hero image and gallery
+    const localImageMap: Record<string, string> = {
+        'templeton': '/2021_05_24_06_18_22_templeton6.jpeg',
+        'frame': '/111-750x450.jpeg',
+        'hue': '/2022_08_29_09_49_51_hue_image4-1024x640-1.jpg',
+        'executive-on-the-park': '/111-750x450.jpeg',
+    };
+
+    let mappedImages = (images as ListingImage[]) || [];
+    if (listing.slug && localImageMap[listing.slug]) {
+        listing.hero_image_url = localImageMap[listing.slug];
+        // Ensure there's at least one valid image for the gallery
+        if (!mappedImages.length) {
+            mappedImages = [{
+                id: 'local-fallback',
+                listing_id: listing.id,
+                url: localImageMap[listing.slug],
+                alt_text: listing.title,
+                sort_order: 1,
+                is_hero: true,
+                created_at: new Date().toISOString()
+            } as ListingImage];
+        } else {
+            mappedImages[0].url = localImageMap[listing.slug];
+        }
+    }
+
     return {
         ...listing,
-        images: (images as ListingImage[]) || [],
+        images: mappedImages,
     } as PresaleListing;
 }
 

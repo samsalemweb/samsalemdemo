@@ -35,7 +35,7 @@ export default function LatestNewsClient({ posts }: LatestNewsClientProps) {
                         <StaggerItem key={post.slug} direction="up">
                             <HoverCard lift={-6} scaleAmount={1.02}>
                                 <Link href={`/news/articles/${post.slug}`} className="group block">
-                                    <div className="rounded-2xl overflow-hidden aspect-[3/2] mb-5">
+                                    <div className="relative rounded-2xl overflow-hidden aspect-[3/2] mb-5">
                                         {post.hero_image_url ? (
                                             <Image
                                                 src={post.hero_image_url}

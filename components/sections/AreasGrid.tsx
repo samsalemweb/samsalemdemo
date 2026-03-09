@@ -6,7 +6,6 @@ import { Area } from '@/lib/types';
 import areasData from '@/lib/data/areas.json';
 import ScrollReveal, { StaggerContainer, StaggerItem } from '@/components/animations/ScrollReveal';
 import { WordReveal } from '@/components/animations/TextReveal';
-import HoverCard from '@/components/animations/HoverCard';
 
 const areas = (areasData as Area[]).slice(0, 6);
 
@@ -32,28 +31,27 @@ export default function AreasGrid() {
                 <StaggerContainer stagger={0.1} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {areas.map((area) => (
                         <StaggerItem key={area.slug} direction="up">
-                            <HoverCard lift={-6} scaleAmount={1.02}>
-                                <Link href={`/areas/${area.slug}`} className="group block">
-                                    <div className="rounded-2xl overflow-hidden aspect-[4/3] mb-4">
-                                        <Image
-                                            src={area.image}
-                                            alt={area.name}
-                                            fill
-                                            className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                        />
+                            <Link href={`/areas/${area.slug}`} className="group block">
+                                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] mb-4">
+                                    <Image
+                                        src={area.image}
+                                        alt={area.name}
+                                        fill
+                                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    />
+                                </div>
+                                <div className="flex items-center justify-between">
+                                    <h3 className="text-lg font-medium text-primary">
+                                        {area.name}, BC
+                                    </h3>
+                                    <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary group-hover:text-white transition-all duration-300">
+                                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                        </svg>
                                     </div>
-                                    <div className="flex items-center justify-between">
-                                        <h3 className="text-lg font-medium text-primary">
-                                            {area.name}, BC
-                                        </h3>
-                                        <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary group-hover:text-white transition-all duration-300">
-                                            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </Link>
-                            </HoverCard>
+                                </div>
+                            </Link>
                         </StaggerItem>
                     ))}
                 </StaggerContainer>
@@ -61,3 +59,4 @@ export default function AreasGrid() {
         </section>
     );
 }
+

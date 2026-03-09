@@ -13,11 +13,17 @@ export default function PresaleCard({ listing }: PresaleCardProps) {
     return (
         <Link href={`/presale/${listing.slug}`} className="group block">
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -5 }}
                 viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.5 }}
-                className="rounded-3xl overflow-hidden border border-border bg-white hover:shadow-xl transition-all duration-500 h-full flex flex-col"
+                transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 20,
+                    duration: 0.8
+                }}
+                className="rounded-3xl overflow-hidden border border-border bg-white shadow-sm hover:shadow-2xl transition-shadow duration-300 h-full flex flex-col"
             >
                 {/* Hero Image */}
                 <div className="relative h-[260px] overflow-hidden">

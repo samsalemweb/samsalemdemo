@@ -3,6 +3,8 @@ import StatsSection from '@/components/sections/StatsSection';
 import FeaturedListings from '@/components/sections/FeaturedListings';
 import AreasGrid from '@/components/sections/AreasGrid';
 import WhySamSalem from '@/components/sections/WhySamSalem';
+import ComparisonSection from '@/components/sections/ComparisonSection';
+import ProcessSection from '@/components/sections/ProcessSection';
 import AchievementsSection from '@/components/sections/AchievementsSection';
 import Testimonials from '@/components/sections/Testimonials';
 import LatestNews from '@/components/sections/LatestNews';
@@ -16,6 +18,8 @@ export default function Home() {
       <FeaturedListings />
       <AreasGrid />
       <WhySamSalem />
+      <ComparisonSection />
+      <ProcessSection />
       <AchievementsSection />
       <Testimonials />
       <LatestNews />
