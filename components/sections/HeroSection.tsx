@@ -80,25 +80,9 @@ export default function HeroSection() {
                     </ScrollReveal>
 
                     <ScrollReveal direction="up" delay={1.1} blur>
-                        <div className="flex items-center gap-4 mb-8">
-                            <motion.div
-                                className="shrink-0"
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.8, delay: 1.3, ease: [0.25, 0.1, 0.25, 1] }}
-                            >
-                                <Image
-                                    src="/top1.jpeg"
-                                    alt="Top 1% Greater Vancouver PREC"
-                                    width={120}
-                                    height={120}
-                                    className="w-[100px] lg:w-[110px] h-auto rounded-full shadow-[0_0_40px_rgba(201,168,76,0.5)] border-3 border-[#C9A84C]/50"
-                                />
-                            </motion.div>
-                            <p className="text-white/90 text-base lg:text-lg text-left max-w-sm leading-snug font-semibold">
-                                Strong focus on Presales, Condos, and Luxury Homes — Top 1% of all REALTORS in Greater Vancouver
-                            </p>
-                        </div>
+                        <p className="text-white/90 text-base lg:text-lg max-w-lg leading-snug font-semibold mb-8">
+                            Strong focus on Presales, Condos, and Luxury Homes — Top 1% of all REALTORS in Greater Vancouver
+                        </p>
                     </ScrollReveal>
 
                     <ScrollReveal direction="up" delay={1.4}>
