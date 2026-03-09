@@ -127,28 +127,10 @@ export default function HeroSection() {
             {/* ============ MOBILE LAYOUT ============ */}
             <div className="md:hidden relative w-full overflow-hidden" style={{ height: '100svh' }}>
 
-                {/* Sam photo — absolute bottom, left-aligned */}
-                <motion.div
-                    className="absolute bottom-0 left-0 z-[1]"
-                    style={{ height: '60%' }}
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-                >
-                    <Image
-                        src="https://res.cloudinary.com/djtzs6kuv/image/upload/v1773074987/samsalempicture-removebg-preview_sfjzyc.png"
-                        alt="Sam Salem"
-                        width={300}
-                        height={420}
-                        className="h-full w-auto object-contain object-bottom"
-                        priority
-                    />
-                </motion.div>
-
-                {/* Text — top center */}
-                <div className="absolute top-24 left-0 right-0 z-10 text-center px-6">
+                {/* Single container — text + buttons together, positioned above Sam's photo */}
+                <div className="absolute top-20 left-0 right-0 z-10 flex flex-col items-center text-center px-6 gap-3">
                     <motion.h1
-                        className="text-3xl font-serif font-bold text-white mb-1"
+                        className="text-4xl font-serif font-bold text-white"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
@@ -157,28 +139,26 @@ export default function HeroSection() {
                     </motion.h1>
 
                     <ScrollReveal direction="up" delay={0.7} blur>
-                        <p className="text-base text-white/80 mb-1">
+                        <p className="text-base text-white/90">
                             Personal Real Estate Corporation
                         </p>
                     </ScrollReveal>
 
                     <ScrollReveal direction="up" delay={0.9} blur>
-                        <p className="text-lg text-white font-medium mb-1">
+                        <p className="text-lg text-white font-medium">
                             From coffee to keys.
                         </p>
                     </ScrollReveal>
 
                     <ScrollReveal direction="up" delay={1.0} blur>
-                        <p className="text-sm text-white/70 mt-1">
+                        <p className="text-sm text-white/70 px-4">
                             Strong focus on Presales, Condos, and Luxury Homes — Top 1% of all REALTORS in Greater Vancouver
                         </p>
                     </ScrollReveal>
-                </div>
 
-                {/* Buttons — bottom center, 2+1 triangle layout */}
-                <div className="absolute bottom-[60%] left-0 right-0 z-10 flex flex-col items-center gap-2 px-6">
+                    {/* Buttons — 2 on top row, 1 centered below */}
                     <ScrollReveal direction="up" delay={1.1}>
-                        <div className="flex flex-col items-center gap-2 w-full">
+                        <div className="flex flex-col items-center gap-2 w-full mt-2">
                             <div className="flex flex-row gap-2 w-full">
                                 <motion.div
                                     className="flex-1"
@@ -214,6 +194,24 @@ export default function HeroSection() {
                         </div>
                     </ScrollReveal>
                 </div>
+
+                {/* Sam's photo — separate, pinned to bottom-left */}
+                <motion.div
+                    className="absolute bottom-0 left-0 z-[1]"
+                    style={{ height: '55%' }}
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                >
+                    <Image
+                        src="https://res.cloudinary.com/djtzs6kuv/image/upload/v1773074987/samsalempicture-removebg-preview_sfjzyc.png"
+                        alt="Sam Salem"
+                        width={300}
+                        height={420}
+                        className="h-full w-auto object-contain object-bottom"
+                        priority
+                    />
+                </motion.div>
 
             </div>
         </section>
