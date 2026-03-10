@@ -76,7 +76,7 @@ export default function Navbar() {
                                 alt="Sam Salem Logo"
                                 width={160}
                                 height={50}
-                                className="h-8 w-auto object-contain"
+                                className="h-24 w-auto object-contain"
                                 priority
                             />
                         </motion.div>
@@ -162,7 +162,7 @@ export default function Navbar() {
                         >
                             <Link
                                 href="/contact"
-                                className="btn-luxury text-xs"
+                                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#C9A84C] text-white text-xs font-cinzel font-semibold tracking-widest uppercase rounded-full transition-all duration-300 hover:bg-[#B89A3E] hover:shadow-lg hover:shadow-[#C9A84C]/30"
                             >
                                 Contact Sam
                                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

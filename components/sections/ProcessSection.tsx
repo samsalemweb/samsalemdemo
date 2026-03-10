@@ -51,10 +51,7 @@ export default function ProcessSection() {
                         <span className="section-label justify-center md:justify-start mb-6">Process</span>
                     </ScrollReveal>
                     <ScrollReveal direction="up" delay={0.2}>
-                        <h2
-                            className="text-3xl md:text-4xl font-cinzel font-bold leading-tight tracking-tight max-w-2xl mx-auto md:mx-0"
-                            style={{ color: '#1a1a1a', textShadow: '2px 2px 0px rgba(201,168,76,0.4), 0 4px 12px rgba(0,0,0,0.3)' }}
-                        >
+                        <h2 className="text-3xl md:text-4xl font-cinzel font-bold leading-tight tracking-tight max-w-2xl mx-auto md:mx-0">
                             Starting with browsing and ending with move-in day
                         </h2>
                     </ScrollReveal>

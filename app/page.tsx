@@ -1,5 +1,6 @@
 import HeroSection from '@/components/sections/HeroSection';
 import StatsSection from '@/components/sections/StatsSection';
+import GoogleReviewsSlider from '@/components/sections/GoogleReviewsSlider';
 import FeaturedListings from '@/components/sections/FeaturedListings';
 import AreasGrid from '@/components/sections/AreasGrid';
 import WhySamSalem from '@/components/sections/WhySamSalem';
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroSection />
       <WhySamSalem />
       <StatsSection />
+      <GoogleReviewsSlider />
       <FeaturedListings />
       <AreasGrid />
       <ComparisonSection />
