@@ -212,7 +212,7 @@ export default function HeroSection() {
                 {/* Sam's photo — separate, pinned to bottom-left */}
                 <motion.div
                     className="absolute bottom-0 left-0 z-10"
-                    style={{ height: '55%', width: '58%' }}
+                    style={{ height: '45%', width: '58%' }}
                     initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
