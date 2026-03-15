@@ -126,6 +126,15 @@ export default function HeroSection() {
                 {/* Single container — text + buttons together, positioned above Sam's photo */}
                 <div className="absolute top-20 left-0 right-0 z-10 flex flex-col items-center text-center px-6 gap-3">
 
+                    <motion.h1
+                        className="text-4xl sm:text-5xl font-cinzel font-bold text-white tracking-widest"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                    >
+                        SAM SALEM
+                    </motion.h1>
+
                     <ScrollReveal direction="up" delay={0.7} blur>
                         <p className="text-base text-white/90 font-cormorant">
                             Personal Real Estate Corporation
