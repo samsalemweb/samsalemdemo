@@ -1,4 +1,4 @@
-import { getAllPresaleListings } from '@/lib/supabase';
+import { getAllPresaleListings } from '@/lib/presale';
 import SamsListingGrid from './SamsListingGrid';
 
 export const revalidate = 60;

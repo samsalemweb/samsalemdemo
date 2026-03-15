@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { PresaleListing } from '@/lib/types';
+import type { PresaleWithImages } from '@/types/presale';
 import PresaleCard from '@/components/presale/PresaleCard';
 
 interface SamsListingGridProps {
-    listings: PresaleListing[];
+    listings: PresaleWithImages[];
 }
 
 export default function SamsListingGrid({ listings }: SamsListingGridProps) {
@@ -13,17 +13,17 @@ export default function SamsListingGrid({ listings }: SamsListingGridProps) {
     const [typeFilter, setTypeFilter] = useState('');
 
     const cities = useMemo(() => {
-        return Array.from(new Set(listings.map((l) => l.city))).sort();
+        return Array.from(new Set(listings.map((l) => l.city).filter(Boolean))).sort();
     }, [listings]);
 
     const propertyTypes = useMemo(() => {
-        return Array.from(new Set(listings.flatMap((l) => l.property_types))).sort();
+        return Array.from(new Set(listings.map((l) => l.property_type).filter(Boolean))).sort();
     }, [listings]);
 
     const filtered = useMemo(() => {
         return listings.filter((l) => {
             if (cityFilter && l.city !== cityFilter) return false;
-            if (typeFilter && !l.property_types.includes(typeFilter)) return false;
+            if (typeFilter && l.property_type !== typeFilter) return false;
             return true;
         });
     }, [listings, cityFilter, typeFilter]);
@@ -85,7 +85,7 @@ export default function SamsListingGrid({ listings }: SamsListingGridProps) {
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filtered.map((listing) => (
-                        <PresaleCard key={listing.id} listing={listing} />
+                        <PresaleCard key={listing.slug} listing={listing} />
                     ))}
                 </div>
             )}

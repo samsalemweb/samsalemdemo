@@ -1,15 +1,15 @@
-import { getAllPresaleListings } from '@/lib/presale';
-import PresaleGrid from './PresaleGrid';
+import { getAllOfficeListings } from '@/lib/office-listings';
+import OfficeListingGrid from './OfficeListingGrid';
 
 export const revalidate = 3600;
 
 export const metadata = {
-    title: 'Presale Properties | Sam Salem | PREC',
-    description: 'Explore the latest presale and pre-construction developments across Greater Vancouver. Get early access with Sam Salem, top 1% REALTOR.',
+    title: 'Office Listings | Sam Salem | PREC',
+    description: 'Browse office listings from Sincerealty. Contact Sam Salem for exclusive access to the best properties in Greater Vancouver.',
 };
 
-export default async function PresalePage() {
-    const listings = await getAllPresaleListings();
+export default async function OfficeListingPage() {
+    const listings = await getAllOfficeListings();
 
     return (
         <div className="min-h-screen bg-background">
@@ -22,14 +22,14 @@ export default async function PresalePage() {
                         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-accent/30 mb-6">
                             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
                             <span className="text-accent font-body font-semibold text-xs tracking-[0.15em] uppercase">
-                                New Developments
+                                Office Listings
                             </span>
                         </span>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-medium text-white mb-4 tracking-tight">
-                            Presale Properties
+                            Office Listings
                         </h1>
                         <p className="text-white/70 font-body text-lg md:text-xl max-w-2xl leading-relaxed">
-                            Your most reliable resource for up-to-date insights on new and upcoming real estate developments in Greater Vancouver.
+                            Explore properties listed by our office at Sincerealty. Contact Sam Salem for personalized guidance on any listing.
                         </p>
                     </div>
                 </div>
@@ -37,7 +37,7 @@ export default async function PresalePage() {
 
             {/* Grid with Client-Side Filters */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-                <PresaleGrid listings={listings} />
+                <OfficeListingGrid listings={listings} />
             </div>
         </div>
     );

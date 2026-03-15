@@ -14,6 +14,7 @@ const navLinks = [
         children: [
             { label: "Sam's Listings", href: '/buy/samslisting' },
             { label: 'Presale Properties', href: '/presale' },
+            { label: 'Office Listing', href: '/listing/office-listing' },
             { label: 'Sold Properties', href: '/buy/sold' },
         ],
     },
@@ -92,7 +93,7 @@ export default function Navbar() {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden lg:flex items-center gap-3">
+                    <div className="hidden lg:flex items-center gap-6">
                         {navLinks.map((link) => (
                             <div
                                 key={link.label}

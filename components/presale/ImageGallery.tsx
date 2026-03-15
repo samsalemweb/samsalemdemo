@@ -3,10 +3,14 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ListingImage } from '@/lib/types';
+
+interface GalleryImage {
+    url: string;
+    alt: string;
+}
 
 interface ImageGalleryProps {
-    images: ListingImage[];
+    images: GalleryImage[];
     title: string;
 }
 
@@ -38,7 +42,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                     >
                         <Image
                             src={selectedImage.url}
-                            alt={selectedImage.alt_text || `${title} - Image ${selectedIndex + 1}`}
+                            alt={selectedImage.alt || `${title} - Image ${selectedIndex + 1}`}
                             fill
                             unoptimized
                             className="object-cover"
@@ -85,7 +89,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                 <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
                     {images.map((img, idx) => (
                         <button
-                            key={img.id || idx}
+                            key={img.url + idx}
                             onClick={() => setSelectedIndex(idx)}
                             className={`relative shrink-0 w-20 h-16 md:w-24 md:h-18 rounded-xl overflow-hidden transition-all duration-300 ${selectedIndex === idx
                                 ? 'ring-2 ring-accent ring-offset-2 opacity-100'
@@ -94,7 +98,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
                         >
                             <Image
                                 src={img.url}
-                                alt={img.alt_text || `${title} thumbnail ${idx + 1}`}
+                                alt={img.alt || `${title} thumbnail ${idx + 1}`}
                                 fill
                                 unoptimized
                                 className="object-cover"

@@ -1,4 +1,4 @@
-import { getAllPresaleListings } from '@/lib/supabase';
+import { getAllPresaleListings } from '@/lib/presale';
 import FeaturedListingsClient from './FeaturedListingsClient';
 
 export default async function FeaturedListings() {

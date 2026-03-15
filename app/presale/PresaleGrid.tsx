@@ -1,35 +1,39 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { PresaleListing } from '@/lib/types';
+import type { PresaleWithImages } from '@/types/presale';
 import PresaleCard from '@/components/presale/PresaleCard';
 
 interface PresaleGridProps {
-    listings: PresaleListing[];
+    listings: PresaleWithImages[];
 }
+
+const statusOptions = ['Selling', 'Registration', 'Coming Soon'];
 
 export default function PresaleGrid({ listings }: PresaleGridProps) {
     const [cityFilter, setCityFilter] = useState('');
     const [typeFilter, setTypeFilter] = useState('');
+    const [statusFilter, setStatusFilter] = useState('');
 
     // Extract unique cities and property types from actual data
     const cities = useMemo(() => {
-        const unique = Array.from(new Set(listings.map((l) => l.city)));
+        const unique = Array.from(new Set(listings.map((l) => l.city).filter(Boolean)));
         return unique.sort();
     }, [listings]);
 
     const propertyTypes = useMemo(() => {
-        const unique = Array.from(new Set(listings.flatMap((l) => l.property_types)));
+        const unique = Array.from(new Set(listings.map((l) => l.property_type).filter(Boolean)));
         return unique.sort();
     }, [listings]);
 
     const filtered = useMemo(() => {
         return listings.filter((l) => {
             if (cityFilter && l.city !== cityFilter) return false;
-            if (typeFilter && !l.property_types.includes(typeFilter)) return false;
+            if (typeFilter && l.property_type !== typeFilter) return false;
+            if (statusFilter && l.listing_status !== statusFilter) return false;
             return true;
         });
-    }, [listings, cityFilter, typeFilter]);
+    }, [listings, cityFilter, typeFilter, statusFilter]);
 
     return (
         <div>
@@ -61,6 +65,19 @@ export default function PresaleGrid({ listings }: PresaleGridProps) {
                         ))}
                     </select>
                 </div>
+                <div className="flex-1 min-w-[160px]">
+                    <label className="text-xs font-semibold tracking-widest uppercase text-muted mb-2 block">Status</label>
+                    <select
+                        value={statusFilter}
+                        onChange={(e) => setStatusFilter(e.target.value)}
+                        className="w-full px-4 py-2.5 bg-background border border-border rounded-xl text-sm focus:outline-none focus:border-accent/50 transition-all"
+                    >
+                        <option value="">All Statuses</option>
+                        {statusOptions.map((status) => (
+                            <option key={status} value={status}>{status}</option>
+                        ))}
+                    </select>
+                </div>
                 <div className="flex items-end pt-6">
                     <span className="text-sm text-muted font-medium">
                         {filtered.length} {filtered.length === 1 ? 'project' : 'projects'} found
@@ -76,7 +93,7 @@ export default function PresaleGrid({ listings }: PresaleGridProps) {
                     </svg>
                     <p className="text-muted font-body text-base">No projects match your filters.</p>
                     <button
-                        onClick={() => { setCityFilter(''); setTypeFilter(''); }}
+                        onClick={() => { setCityFilter(''); setTypeFilter(''); setStatusFilter(''); }}
                         className="mt-4 text-accent text-sm font-semibold hover:underline"
                     >
                         Clear all filters
@@ -85,7 +102,7 @@ export default function PresaleGrid({ listings }: PresaleGridProps) {
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filtered.map((listing) => (
-                        <PresaleCard key={listing.id} listing={listing} />
+                        <PresaleCard key={listing.slug} listing={listing} />
                     ))}
                 </div>
             )}

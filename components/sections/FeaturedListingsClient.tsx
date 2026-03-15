@@ -2,17 +2,24 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { PresaleListing } from '@/lib/types';
+import type { PresaleWithImages } from '@/types/presale';
 import ScrollReveal, { StaggerContainer, StaggerItem } from '@/components/animations/ScrollReveal';
 import { WordReveal } from '@/components/animations/TextReveal';
 import HoverCard, { MagneticButton } from '@/components/animations/HoverCard';
 
+const statusColors: Record<string, string> = {
+    'Selling': 'bg-emerald-500 text-white',
+    'Registration': 'bg-blue-500 text-white',
+    'Coming Soon': 'bg-amber-500 text-white',
+    'Sold Out': 'bg-gray-500 text-white',
+};
+
 interface FeaturedListingsClientProps {
-    listings: PresaleListing[];
+    listings: PresaleWithImages[];
 }
 
 export default function FeaturedListingsClient({ listings }: FeaturedListingsClientProps) {
-    const featured = listings.slice(0, 4);
+    const featured = listings.filter((l) => l.listing_status !== 'Sold Out').slice(0, 4);
 
     return (
         <section className="py-16 md:py-28">
@@ -37,15 +44,15 @@ export default function FeaturedListingsClient({ listings }: FeaturedListingsCli
                 {/* 2-column Grid with stagger */}
                 <StaggerContainer stagger={0.15} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                     {featured.map((listing) => (
-                        <StaggerItem key={listing.id} direction="up">
+                        <StaggerItem key={listing.slug} direction="up">
                             <HoverCard lift={-6} scaleAmount={1.01}>
                                 <Link href={`/presale/${listing.slug}`} className="group block">
                                     {/* Image */}
                                     <div className="relative rounded-3xl overflow-hidden aspect-[4/3] mb-5">
-                                        {listing.hero_image_url ? (
+                                        {listing.cover_image ? (
                                             <Image
-                                                src={listing.hero_image_url}
-                                                alt={listing.title}
+                                                src={listing.cover_image}
+                                                alt={listing.listing_name}
                                                 fill
                                                 unoptimized
                                                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -54,9 +61,11 @@ export default function FeaturedListingsClient({ listings }: FeaturedListingsCli
                                         ) : (
                                             <div className="w-full h-full bg-gray-100" />
                                         )}
-                                        <span className="absolute top-4 right-4 tag-badge tag-rent">
-                                            PRESALE
-                                        </span>
+                                        <div className="absolute top-4 right-4 flex gap-2">
+                                            <span className={`px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-sm ${statusColors[listing.listing_status] || 'bg-accent text-white'}`}>
+                                                {listing.listing_status}
+                                            </span>
+                                        </div>
                                     </div>
 
                                     {/* Details */}
@@ -66,31 +75,20 @@ export default function FeaturedListingsClient({ listings }: FeaturedListingsCli
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                                         </svg>
                                         <span className="text-xs font-medium tracking-wide uppercase text-muted">
-                                            {listing.address}
+                                            {listing.city}{listing.neighbourhood && listing.neighbourhood !== listing.city ? ` · ${listing.neighbourhood}` : ''}
                                         </span>
                                     </div>
 
                                     {/* Stats Row */}
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-4 text-sm text-primary/70">
-                                            {listing.bedrooms && (
+                                            {listing.beds && (
                                                 <>
                                                     <span className="flex items-center gap-1.5">
                                                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                                                             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                                                         </svg>
-                                                        {listing.bedrooms} Beds
-                                                    </span>
-                                                    <span className="text-primary/30">•</span>
-                                                </>
-                                            )}
-                                            {listing.floors && (
-                                                <>
-                                                    <span className="flex items-center gap-1.5">
-                                                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
-                                                        </svg>
-                                                        {listing.floors} Floors
+                                                        {listing.beds} Beds
                                                     </span>
                                                     <span className="text-primary/30">•</span>
                                                 </>
@@ -112,8 +110,11 @@ export default function FeaturedListingsClient({ listings }: FeaturedListingsCli
                                     </div>
 
                                     <h3 className="mt-3 text-lg font-medium text-primary group-hover:text-accent transition-colors leading-snug">
-                                        {listing.title}
+                                        {listing.listing_name}
                                     </h3>
+                                    {listing.price_range && (
+                                        <p className="mt-1 text-sm font-semibold text-foreground">{listing.price_range}</p>
+                                    )}
                                 </Link>
                             </HoverCard>
                         </StaggerItem>
