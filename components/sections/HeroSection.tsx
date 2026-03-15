@@ -124,7 +124,7 @@ export default function HeroSection() {
             >
 
                 {/* Single container — text + buttons together, positioned above Sam's photo */}
-                <div className="absolute top-20 left-0 right-0 z-10 flex flex-col items-center text-center px-6 gap-3">
+                <div className="absolute top-20 left-0 right-0 z-20 flex flex-col items-center text-center px-6 gap-3">
 
                     <motion.h1
                         className="text-4xl sm:text-5xl font-cinzel font-bold text-white tracking-widest"

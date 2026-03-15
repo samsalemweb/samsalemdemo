@@ -7,6 +7,7 @@ import Image from 'next/image';
 import MobileMenu from './MobileMenu';
 
 const navLinks = [
+    { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
     {
         label: 'Listings',
