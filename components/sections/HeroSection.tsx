@@ -56,6 +56,29 @@ export default function HeroSection() {
                     />
                 </motion.div>
 
+                {/* Medallion & Top 1% logos — bottom-right like reference */}
+                <motion.div
+                    className="absolute right-8 lg:right-16 bottom-10 z-10 flex flex-row items-center gap-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 1.0, ease: [0.25, 0.1, 0.25, 1] }}
+                >
+                    <Image
+                        src="/Medallion.png"
+                        alt="Medallion Club Award"
+                        width={100}
+                        height={100}
+                        className="w-[80px] lg:w-[100px] h-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]"
+                    />
+                    <Image
+                        src="/top1.jpeg"
+                        alt="Top 1% of all Realtors"
+                        width={100}
+                        height={100}
+                        className="w-[80px] lg:w-[100px] h-auto rounded-full drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]"
+                    />
+                </motion.div>
+
                 {/* Text — centered over full width */}
                 <div className="relative z-10 w-full min-h-screen flex flex-col items-center justify-center text-center px-6 py-20">
                     <motion.h1
@@ -233,6 +256,32 @@ export default function HeroSection() {
                         }}
                         priority
                     />
+                </motion.div>
+
+                {/* Medallion & Top 1% logos — bottom-right on mobile */}
+                <motion.div
+                    className="absolute bottom-4 right-4 z-20 flex flex-row items-center gap-2"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 1.0, ease: [0.25, 0.1, 0.25, 1] }}
+                >
+                    <div className="rounded-lg bg-black/50 backdrop-blur-sm border border-[#C9A84C]/20 p-2 flex flex-row items-center gap-3">
+                        <Image
+                            src="/Medallion.png"
+                            alt="Medallion Club Award"
+                            width={50}
+                            height={50}
+                            className="w-[45px] h-auto drop-shadow-lg"
+                        />
+                        <div className="h-8 w-px bg-[#C9A84C]/30" />
+                        <Image
+                            src="/top1.jpeg"
+                            alt="Top 1% of all Realtors"
+                            width={50}
+                            height={50}
+                            className="w-[45px] h-auto rounded-full drop-shadow-lg"
+                        />
+                    </div>
                 </motion.div>
 
             </div>

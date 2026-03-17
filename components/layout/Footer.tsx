@@ -83,13 +83,21 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <ScrollReveal direction="up" scale>
                     <div className="flex flex-col items-start gap-6">
-                        <div className="flex items-center gap-5">
+                        <div className="flex items-center gap-5 flex-wrap">
                             <Image
                                 src="/samsalemlogo.PNG"
-                                alt="Sam Salem Sincere Real Estate Logo"
+                                alt="Sam Salem Logo"
                                 width={200}
                                 height={80}
-                                className="w-[140px] md:w-[180px] h-auto brightness-0 invert opacity-70"
+                                className="w-[120px] md:w-[160px] h-auto brightness-0 invert opacity-70"
+                            />
+                            <div className="w-px h-12 bg-[#C9A84C]/20" />
+                            <Image
+                                src="/logo-white1.png"
+                                alt="Sam Salem Real Estate Logo"
+                                width={200}
+                                height={80}
+                                className="w-[120px] md:w-[160px] h-auto opacity-90"
                             />
                             <div className="w-px h-12 bg-[#C9A84C]/20" />
                             <Image
@@ -97,15 +105,15 @@ export default function Footer() {
                                 alt="Top 1% Greater Vancouver PREC"
                                 width={90}
                                 height={90}
-                                className="w-[70px] md:w-[85px] h-auto rounded-full opacity-90"
+                                className="w-[60px] md:w-[80px] h-auto rounded-full opacity-90"
                             />
                             <div className="w-px h-12 bg-[#C9A84C]/20" />
                             <Image
-                                src="/th.jpg"
-                                alt="Medallion Award"
+                                src="/Medallion.png"
+                                alt="Medallion Club Award"
                                 width={90}
                                 height={90}
-                                className="w-[70px] md:w-[85px] h-auto opacity-90"
+                                className="w-[60px] md:w-[80px] h-auto opacity-90"
                             />
                         </div>
                         <div className="text-[clamp(5rem,15vw,14rem)] font-bold leading-none tracking-tighter text-white/[0.07] select-none">
@@ -113,6 +121,63 @@ export default function Footer() {
                         </div>
                     </div>
                 </ScrollReveal>
+            </div>
+
+            {/* Awards Row */}
+            <div className="border-t border-[#C9A84C]/10">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+                    <ScrollReveal direction="up" delay={0.1}>
+                        <div className="flex flex-col items-center gap-6">
+                            <div className="flex items-center gap-2 mb-2">
+                                <div className="w-8 h-px bg-[#C9A84C]/40" />
+                                <span className="text-[#C9A84C] text-xs font-cinzel font-medium tracking-[0.25em] uppercase">
+                                    Awards & Recognition
+                                </span>
+                                <div className="w-8 h-px bg-[#C9A84C]/40" />
+                            </div>
+                            <div className="grid grid-cols-2 gap-4 md:gap-8 max-w-2xl w-full">
+                                <motion.div
+                                    className="group relative rounded-xl overflow-hidden border border-white/[0.08] bg-white/[0.03]"
+                                    whileHover={{ y: -4, scale: 1.02 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#C9A84C]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <Image
+                                        src="/sam-salem-poster-2.jpg"
+                                        alt="Canadian Choice Award 2025"
+                                        width={400}
+                                        height={500}
+                                        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-3">
+                                        <p className="text-white text-xs md:text-sm font-cinzel font-semibold text-center">
+                                            Canadian Choice Award 2025
+                                        </p>
+                                    </div>
+                                </motion.div>
+                                <motion.div
+                                    className="group relative rounded-xl overflow-hidden border border-white/[0.08] bg-white/[0.03]"
+                                    whileHover={{ y: -4, scale: 1.02 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#C9A84C]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <Image
+                                        src="/Winner-Social-Media-Post-2026-2.png"
+                                        alt="Canadian Choice Award 2026"
+                                        width={400}
+                                        height={500}
+                                        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-3">
+                                        <p className="text-white text-xs md:text-sm font-cinzel font-semibold text-center">
+                                            Canadian Choice Award 2026
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        </div>
+                    </ScrollReveal>
+                </div>
             </div>
 
             {/* Newsletter + Bottom */}
