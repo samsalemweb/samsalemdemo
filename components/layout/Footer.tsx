@@ -257,7 +257,7 @@ export default function Footer() {
                         <div className="flex items-center justify-center md:justify-end gap-2 md:w-1/2">
                             <span className="text-white/40 text-[10px] uppercase tracking-widest">Built by</span>
                             <a href="https://www.moldavitebusinessbooster.com/" target="_blank" rel="noopener noreferrer" className="text-[#C9A84C] text-[11px] font-bold tracking-widest uppercase hover:text-white transition-all duration-300 drop-shadow-[0_0_8px_rgba(201,168,76,0.3)] hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.4)]">
-                                Moldavite
+                                moldavitebusinessbooster.com
                             </a>
                         </div>
                     </div>

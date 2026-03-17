@@ -260,28 +260,25 @@ export default function HeroSection() {
 
                 {/* Medallion & Top 1% logos — bottom-right on mobile */}
                 <motion.div
-                    className="absolute bottom-4 right-4 z-20 flex flex-row items-center gap-2"
+                    className="absolute bottom-4 right-4 z-20 flex flex-row items-center gap-3"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.0, ease: [0.25, 0.1, 0.25, 1] }}
                 >
-                    <div className="rounded-lg bg-black/50 backdrop-blur-sm border border-[#C9A84C]/20 p-2 flex flex-row items-center gap-3">
-                        <Image
-                            src="/Medallion.png"
-                            alt="Medallion Club Award"
-                            width={50}
-                            height={50}
-                            className="w-[45px] h-auto drop-shadow-lg"
-                        />
-                        <div className="h-8 w-px bg-[#C9A84C]/30" />
-                        <Image
-                            src="/top1.jpeg"
-                            alt="Top 1% of all Realtors"
-                            width={50}
-                            height={50}
-                            className="w-[45px] h-auto rounded-full drop-shadow-lg"
-                        />
-                    </div>
+                    <Image
+                        src="/Medallion.png"
+                        alt="Medallion Club Award"
+                        width={50}
+                        height={50}
+                        className="w-[45px] h-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+                    />
+                    <Image
+                        src="/top1.jpeg"
+                        alt="Top 1% of all Realtors"
+                        width={50}
+                        height={50}
+                        className="w-[45px] h-auto rounded-full drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+                    />
                 </motion.div>
 
             </div>
