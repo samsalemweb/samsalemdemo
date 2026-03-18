@@ -83,38 +83,48 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <ScrollReveal direction="up" scale>
                     <div className="flex flex-col items-start gap-6">
-                        <div className="flex items-center gap-5 flex-wrap">
-                            <Image
-                                src="/samsalemlogo.PNG"
-                                alt="Sam Salem Logo"
-                                width={200}
-                                height={80}
-                                className="w-[120px] md:w-[160px] h-auto brightness-0 invert opacity-70"
-                            />
-                            <div className="w-px h-12 bg-[#C9A84C]/20" />
-                            <Image
-                                src="/logo-white1.png"
-                                alt="Sam Salem Real Estate Logo"
-                                width={200}
-                                height={80}
-                                className="w-[120px] md:w-[160px] h-auto opacity-90"
-                            />
-                            <div className="w-px h-12 bg-[#C9A84C]/20" />
-                            <Image
-                                src="/top1.jpeg"
-                                alt="Top 1% Greater Vancouver PREC"
-                                width={90}
-                                height={90}
-                                className="w-[60px] md:w-[80px] h-auto rounded-full opacity-90"
-                            />
-                            <div className="w-px h-12 bg-[#C9A84C]/20" />
-                            <Image
-                                src="/Medallion.png"
-                                alt="Medallion Club Award"
-                                width={90}
-                                height={90}
-                                className="w-[60px] md:w-[80px] h-auto opacity-90"
-                            />
+                        <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-5">
+                            <div className="flex items-center gap-5">
+                                <Image
+                                    src="/samsalemlogo.PNG"
+                                    alt="Sam Salem Logo"
+                                    width={200}
+                                    height={80}
+                                    className="w-[120px] md:w-[160px] h-auto brightness-0 invert opacity-70"
+                                />
+                                <div className="w-px h-12 bg-[#C9A84C]/20" />
+                                <Image
+                                    src="/logo-white1.png"
+                                    alt="Sam Salem Real Estate Logo"
+                                    width={200}
+                                    height={80}
+                                    className="w-[120px] md:w-[160px] h-auto opacity-90"
+                                />
+                            </div>
+                            
+                            <div className="hidden md:block w-px h-12 bg-[#C9A84C]/20" />
+                            
+                            <div className="flex items-center gap-5">
+                                <div className="w-[120px] md:w-auto flex justify-center md:block">
+                                    <Image
+                                        src="/top1.jpeg"
+                                        alt="Top 1% Greater Vancouver PREC"
+                                        width={90}
+                                        height={90}
+                                        className="w-[60px] md:w-[80px] h-auto rounded-full opacity-90 text-center"
+                                    />
+                                </div>
+                                <div className="w-px h-12 bg-[#C9A84C]/20" />
+                                <div className="w-[120px] md:w-auto flex justify-center md:block">
+                                    <Image
+                                        src="/Medallion.png"
+                                        alt="Medallion Club Award"
+                                        width={90}
+                                        height={90}
+                                        className="w-[60px] md:w-[80px] h-auto opacity-90 text-center"
+                                    />
+                                </div>
+                            </div>
                         </div>
                         <div className="text-[clamp(5rem,15vw,14rem)] font-bold leading-none tracking-tighter text-white/[0.07] select-none">
                             Sam Salem
