@@ -9,9 +9,7 @@ interface MLSListingCardProps {
 }
 
 export default function MLSListingCard({ listing }: MLSListingCardProps) {
-    const isSamListing =
-        listing.ListAgentFullName === 'Sam Salem' ||
-        listing.ListingBrokerage.includes('Sincere');
+
 
     const lastUpdated = new Date(listing.ModificationTimestamp).toLocaleDateString(
         'en-CA',

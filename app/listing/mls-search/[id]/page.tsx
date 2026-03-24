@@ -27,9 +27,7 @@ export default function MLSDetailPage({ params }: MLSDetailPageProps) {
         day: 'numeric',
     });
 
-    const isSamListing =
-        listing.ListAgentFullName === 'Sam Salem' ||
-        listing.ListingBrokerage.includes('Sincere');
+
 
     return (
         <div className="min-h-screen bg-cream">
