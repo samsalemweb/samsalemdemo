@@ -85,17 +85,11 @@ export default function MLSListingCard({ listing }: MLSListingCardProps) {
                         </div>
                     )}
 
-                    {/* Brokerage footer */}
+                    {/* Footer */}
                     <div className="border-t border-border pt-3">
-                        {isSamListing ? (
-                            <p className="text-xs text-accent font-semibold">
-                                Listed by Sam Salem — Sincere Real Estate Services
-                            </p>
-                        ) : (
-                            <p className="text-xs text-muted">
-                                {listing.ListOfficeName}
-                            </p>
-                        )}
+                        <p className="text-xs text-accent font-semibold">
+                            Contact Sam Salem for details
+                        </p>
                     </div>
 
                     {/* CREA compliance footer */}

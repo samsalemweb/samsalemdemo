@@ -92,7 +92,6 @@ export default function ListingDetailPage({ params }: Props) {
                                     { label: 'Bathrooms', value: listing.bathrooms },
                                     { label: 'Total Area', value: `${listing.sqft.toLocaleString()} sq ft` },
                                     { label: 'MLS #', value: listing.mlsId || 'N/A' },
-                                    { label: 'Brokerage', value: listing.listingBrokerage },
                                 ].map((detail) => (
                                     <div key={detail.label} className="flex justify-between items-center py-3 border-b border-gray-100">
                                         <span className="text-muted font-body text-sm">{detail.label}</span>
@@ -145,7 +144,7 @@ export default function ListingDetailPage({ params }: Props) {
                                 </p>
                                 <div className="space-y-4">
                                     <a
-                                        href="tel:+16045551234"
+                                        href="tel:+16044452030"
                                         className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-accent text-white font-body font-bold tracking-wide uppercase text-sm rounded-full hover:bg-white hover:text-accent transition-all duration-300"
                                     >
                                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -154,7 +153,7 @@ export default function ListingDetailPage({ params }: Props) {
                                         Call Sam Salem
                                     </a>
                                     <a
-                                        href="mailto:sam@samsalemrealty.ca"
+                                        href="mailto:info@sam-salem.com"
                                         className="w-full flex items-center justify-center gap-3 px-6 py-4 border-2 border-white/20 text-white font-body font-bold tracking-wide uppercase text-sm rounded-full hover:bg-white/10 transition-all duration-300"
                                     >
                                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
