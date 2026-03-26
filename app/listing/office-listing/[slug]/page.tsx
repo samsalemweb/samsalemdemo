@@ -155,11 +155,11 @@ export default async function OfficeListingDetailPage({ params }: { params: { sl
                                         </svg>
                                         +1 (604) 445-2030
                                     </a>
-                                    <a href="mailto:info@sam-salem.com" className="flex items-center gap-3 text-sm text-muted hover:text-accent transition-colors">
+                                    <a href="mailto:salemhomes@yahoo.com" className="flex items-center gap-3 text-sm text-muted hover:text-accent transition-colors">
                                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                                         </svg>
-                                        info@sam-salem.com
+                                        salemhomes@yahoo.com
                                     </a>
                                 </div>
                                 <Link

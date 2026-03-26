@@ -8,6 +8,7 @@ import MobileMenu from './MobileMenu';
 
 const navLinks = [
     { label: 'Home', href: '/' },
+    { label: 'Sold', href: '/buy/sold' },
     { label: 'About', href: '/about' },
     {
         label: 'Listings',
@@ -17,7 +18,6 @@ const navLinks = [
             { label: 'Presale Properties', href: '/presale' },
             { label: 'Office Listing', href: '/listing/office-listing' },
             { label: 'Assignment', href: '/listing/assignment' },
-            { label: 'Sold Properties', href: '/buy/sold' },
         ],
     },
     {
@@ -36,7 +36,6 @@ const navLinks = [
             { label: 'West Vancouver', href: '/areas/west-vancouver' },
         ],
     },
-    { label: 'Assignment', href: '/listing/assignment' },
     {
         label: 'News',
         href: '/news/articles',

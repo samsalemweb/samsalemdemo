@@ -58,25 +58,28 @@ export default function HeroSection() {
 
                 {/* Medallion & Top 1% logos — bottom-right like reference */}
                 <motion.div
-                    className="absolute right-8 lg:right-16 bottom-10 z-10 flex flex-row items-center gap-4"
+                    className="absolute right-8 lg:right-16 bottom-10 z-10 flex flex-col items-center gap-2"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.0, ease: [0.25, 0.1, 0.25, 1] }}
                 >
-                    <Image
-                        src="/Medallion.png"
-                        alt="Medallion Club Award"
-                        width={100}
-                        height={100}
-                        className="w-[80px] lg:w-[100px] h-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]"
-                    />
-                    <Image
-                        src="/top1.jpeg"
-                        alt="Top 1% of all Realtors"
-                        width={100}
-                        height={100}
-                        className="w-[80px] lg:w-[100px] h-auto rounded-full drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]"
-                    />
+                    <div className="flex flex-row items-center gap-4">
+                        <Image
+                            src="/Medallion.png"
+                            alt="Medallion Club Award"
+                            width={100}
+                            height={100}
+                            className="w-[80px] lg:w-[100px] h-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]"
+                        />
+                        <Image
+                            src="/top1.jpeg"
+                            alt="Top 1% of all Realtors"
+                            width={100}
+                            height={100}
+                            className="w-[80px] lg:w-[100px] h-auto rounded-full drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]"
+                        />
+                    </div>
+                    <span className="font-cinzel text-xs font-bold tracking-widest" style={{ color: '#C9A84C', textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>GVR 2023</span>
                 </motion.div>
 
                 {/* Text — centered over full width */}
@@ -105,7 +108,7 @@ export default function HeroSection() {
                     <ScrollReveal direction="up" delay={1.1} blur>
                         <p className="font-cinzel text-2xl lg:text-3xl font-bold tracking-widest mb-2"
                             style={{ color: '#C9A84C', textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
-                            Top 1% of all Realtors®️ | GVR 2023
+                            Top 1% of all Realtors<sup className="text-[8px] align-super">®</sup>
                         </p>
                         <p className="font-cormorant text-base lg:text-lg text-white/90 tracking-wide mb-8"
                             style={{ textShadow: '0 2px 6px rgba(0,0,0,0.9)' }}>
@@ -173,7 +176,7 @@ export default function HeroSection() {
                     <ScrollReveal direction="up" delay={1.0} blur>
                         <p className="font-cinzel text-lg font-bold tracking-widest"
                             style={{ color: '#C9A84C', textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
-                            Top 1% of all Realtors®️ | GVR 2023
+                            Top 1% of all Realtors<sup className="text-[6px] align-super">®</sup>
                         </p>
                         <p className="font-cormorant text-sm text-white/70 px-4 mt-1"
                             style={{ textShadow: '0 2px 6px rgba(0,0,0,0.9)' }}>
@@ -260,25 +263,28 @@ export default function HeroSection() {
 
                 {/* Medallion & Top 1% logos — bottom-right on mobile */}
                 <motion.div
-                    className="absolute bottom-4 right-4 z-20 flex flex-row items-center gap-3"
+                    className="absolute bottom-4 right-4 z-20 flex flex-col items-center gap-1"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.0, ease: [0.25, 0.1, 0.25, 1] }}
                 >
-                    <Image
-                        src="/Medallion.png"
-                        alt="Medallion Club Award"
-                        width={50}
-                        height={50}
-                        className="w-[45px] h-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
-                    />
-                    <Image
-                        src="/top1.jpeg"
-                        alt="Top 1% of all Realtors"
-                        width={50}
-                        height={50}
-                        className="w-[45px] h-auto rounded-full drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
-                    />
+                    <div className="flex flex-row items-center gap-3">
+                        <Image
+                            src="/Medallion.png"
+                            alt="Medallion Club Award"
+                            width={50}
+                            height={50}
+                            className="w-[45px] h-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+                        />
+                        <Image
+                            src="/top1.jpeg"
+                            alt="Top 1% of all Realtors"
+                            width={50}
+                            height={50}
+                            className="w-[45px] h-auto rounded-full drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+                        />
+                    </div>
+                    <span className="font-cinzel text-[9px] font-bold tracking-widest" style={{ color: '#C9A84C', textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>GVR 2023</span>
                 </motion.div>
 
             </div>

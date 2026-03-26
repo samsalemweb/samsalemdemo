@@ -212,7 +212,7 @@ export default async function PresaleDetailPage({
                                         </div>
                                     </a>
                                     <a
-                                        href="mailto:info@sam-salem.com"
+                                        href="mailto:salemhomes@yahoo.com"
                                         className="flex items-center gap-3 text-white/90 hover:text-accent transition-colors"
                                     >
                                         <span className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
@@ -222,7 +222,7 @@ export default async function PresaleDetailPage({
                                         </span>
                                         <div>
                                             <span className="text-xs text-white/50 block">Sam Salem</span>
-                                            <span className="text-sm font-medium">info@sam-salem.com</span>
+                                            <span className="text-sm font-medium">salemhomes@yahoo.com</span>
                                         </div>
                                     </a>
                                 </div>
