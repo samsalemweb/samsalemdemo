@@ -58,12 +58,12 @@ export default function HeroSection() {
 
                 {/* Medallion & Top 1% logos — bottom-right like reference */}
                 <motion.div
-                    className="absolute right-8 lg:right-16 bottom-10 z-10 flex flex-col items-center gap-2"
+                    className="absolute right-8 lg:right-16 bottom-10 z-10 flex flex-row items-end gap-4"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.0, ease: [0.25, 0.1, 0.25, 1] }}
                 >
-                    <div className="flex flex-row items-center gap-4">
+                    <div className="flex flex-col items-center gap-1">
                         <Image
                             src="/Medallion.png"
                             alt="Medallion Club Award"
@@ -71,15 +71,15 @@ export default function HeroSection() {
                             height={100}
                             className="w-[80px] lg:w-[100px] h-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]"
                         />
-                        <Image
-                            src="/top1.jpeg"
-                            alt="Top 1% of all Realtors"
-                            width={100}
-                            height={100}
-                            className="w-[80px] lg:w-[100px] h-auto rounded-full drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]"
-                        />
+                        <span className="font-cinzel text-xs font-bold tracking-widest" style={{ color: '#C9A84C', textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>GVR 2023</span>
                     </div>
-                    <span className="font-cinzel text-xs font-bold tracking-widest" style={{ color: '#C9A84C', textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>GVR 2023</span>
+                    <Image
+                        src="/top1.jpeg"
+                        alt="Top 1% of all Realtors"
+                        width={100}
+                        height={100}
+                        className="w-[80px] lg:w-[100px] h-auto rounded-full drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]"
+                    />
                 </motion.div>
 
                 {/* Text — centered over full width */}
@@ -106,9 +106,9 @@ export default function HeroSection() {
                     </ScrollReveal>
 
                     <ScrollReveal direction="up" delay={1.1} blur>
-                        <p className="font-cinzel text-2xl lg:text-3xl font-bold tracking-widest mb-2"
+                        <p className="font-cinzel text-3xl lg:text-4xl xl:text-5xl font-bold tracking-widest mb-2"
                             style={{ color: '#C9A84C', textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
-                            Top 1% of all Realtors<sup className="text-[8px] align-super">®</sup>
+                            Top 1% of all Realtors<sup className="text-[10px] align-super">&reg;</sup>
                         </p>
                         <p className="font-cormorant text-base lg:text-lg text-white/90 tracking-wide mb-8"
                             style={{ textShadow: '0 2px 6px rgba(0,0,0,0.9)' }}>
@@ -174,9 +174,9 @@ export default function HeroSection() {
                     </ScrollReveal>
 
                     <ScrollReveal direction="up" delay={1.0} blur>
-                        <p className="font-cinzel text-lg font-bold tracking-widest"
+                        <p className="font-cinzel text-xl sm:text-2xl font-bold tracking-widest"
                             style={{ color: '#C9A84C', textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
-                            Top 1% of all Realtors<sup className="text-[6px] align-super">®</sup>
+                            Top 1% of all Realtors<sup className="text-[7px] align-super">&reg;</sup>
                         </p>
                         <p className="font-cormorant text-sm text-white/70 px-4 mt-1"
                             style={{ textShadow: '0 2px 6px rgba(0,0,0,0.9)' }}>
@@ -263,12 +263,12 @@ export default function HeroSection() {
 
                 {/* Medallion & Top 1% logos — bottom-right on mobile */}
                 <motion.div
-                    className="absolute bottom-4 right-4 z-20 flex flex-col items-center gap-1"
+                    className="absolute bottom-4 right-4 z-20 flex flex-row items-end gap-3"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.0, ease: [0.25, 0.1, 0.25, 1] }}
                 >
-                    <div className="flex flex-row items-center gap-3">
+                    <div className="flex flex-col items-center gap-1">
                         <Image
                             src="/Medallion.png"
                             alt="Medallion Club Award"
@@ -276,15 +276,15 @@ export default function HeroSection() {
                             height={50}
                             className="w-[45px] h-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
                         />
-                        <Image
-                            src="/top1.jpeg"
-                            alt="Top 1% of all Realtors"
-                            width={50}
-                            height={50}
-                            className="w-[45px] h-auto rounded-full drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
-                        />
+                        <span className="font-cinzel text-[9px] font-bold tracking-widest" style={{ color: '#C9A84C', textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>GVR 2023</span>
                     </div>
-                    <span className="font-cinzel text-[9px] font-bold tracking-widest" style={{ color: '#C9A84C', textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>GVR 2023</span>
+                    <Image
+                        src="/top1.jpeg"
+                        alt="Top 1% of all Realtors"
+                        width={50}
+                        height={50}
+                        className="w-[45px] h-auto rounded-full drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+                    />
                 </motion.div>
 
             </div>
