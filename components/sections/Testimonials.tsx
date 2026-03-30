@@ -14,7 +14,7 @@ export default function Testimonials() {
         <section className="py-16 md:py-28 relative overflow-hidden">
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=1920&q=60"
+                    src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920&q=60"
                     alt=""
                     fill
                     className="object-cover opacity-10"

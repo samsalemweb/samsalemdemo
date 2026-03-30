@@ -16,6 +16,26 @@ const awards = [
         title: 'Canadian Choice Award 2026',
         description: "We're thrilled to announce — we are a 2026 Canadian Choice Award Winner!",
     },
+    {
+        image: '/DSC04398.jpg',
+        title: 'Award Ceremony Highlight',
+        description: 'Honored to be recognized at this prestigious event celebrating excellence in real estate.',
+    },
+    {
+        image: '/DSC04399.jpg',
+        title: 'Excellence in Service',
+        description: 'A proud moment of recognition for our dedication to exceptional client service.',
+    },
+    {
+        image: '/DSC04400.jpg',
+        title: 'Industry Recognition',
+        description: 'Celebrating milestones and achievements alongside industry leaders.',
+    },
+    {
+        image: '/DSC04401.jpg',
+        title: 'Commitment to Excellence',
+        description: 'Another milestone in our journey of delivering outstanding real estate experiences.',
+    },
 ];
 
 export default function AwardsSection() {
@@ -56,8 +76,8 @@ export default function AwardsSection() {
                     </ScrollReveal>
                 </div>
 
-                <StaggerContainer stagger={0.15} className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
-                    {awards.map((award, index) => (
+                <StaggerContainer stagger={0.15} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto">
+                    {awards.map((award) => (
                         <StaggerItem key={award.title} direction="up">
                             <motion.div
                                 className="group relative"
@@ -87,7 +107,7 @@ export default function AwardsSection() {
                                         <div className="flex items-center gap-2 mb-3">
                                             <div className="w-8 h-px bg-accent" />
                                             <span className="text-accent text-xs font-sans font-medium tracking-[0.2em] uppercase">
-                                                {index === 0 ? '2025' : '2026'} Winner
+                                                Award Winner
                                             </span>
                                         </div>
                                         <h3 className="text-xl md:text-2xl font-cinzel font-bold text-white mb-2">

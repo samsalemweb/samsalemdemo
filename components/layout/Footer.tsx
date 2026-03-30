@@ -145,45 +145,36 @@ export default function Footer() {
                                 </span>
                                 <div className="w-8 h-px bg-[#C9A84C]/40" />
                             </div>
-                            <div className="grid grid-cols-2 gap-4 md:gap-8 max-w-2xl w-full">
-                                <motion.div
-                                    className="group relative rounded-xl overflow-hidden border border-white/[0.08] bg-white/[0.03]"
-                                    whileHover={{ y: -4, scale: 1.02 }}
-                                    transition={{ duration: 0.3 }}
-                                >
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#C9A84C]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                    <Image
-                                        src="/sam-salem-poster-2.jpg"
-                                        alt="Canadian Choice Award 2025"
-                                        width={400}
-                                        height={500}
-                                        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                                    />
-                                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-3">
-                                        <p className="text-white text-xs md:text-sm font-cinzel font-semibold text-center">
-                                            Canadian Choice Award 2025
-                                        </p>
-                                    </div>
-                                </motion.div>
-                                <motion.div
-                                    className="group relative rounded-xl overflow-hidden border border-white/[0.08] bg-white/[0.03]"
-                                    whileHover={{ y: -4, scale: 1.02 }}
-                                    transition={{ duration: 0.3 }}
-                                >
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#C9A84C]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                    <Image
-                                        src="/Winner-Social-Media-Post-2026-2.png"
-                                        alt="Canadian Choice Award 2026"
-                                        width={400}
-                                        height={500}
-                                        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                                    />
-                                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-3">
-                                        <p className="text-white text-xs md:text-sm font-cinzel font-semibold text-center">
-                                            Canadian Choice Award 2026
-                                        </p>
-                                    </div>
-                                </motion.div>
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl w-full">
+                                {[
+                                    { src: '/sam-salem-poster-2.jpg', alt: 'Canadian Choice Award 2025', label: 'Canadian Choice Award 2025' },
+                                    { src: '/Winner-Social-Media-Post-2026-2.png', alt: 'Canadian Choice Award 2026', label: 'Canadian Choice Award 2026' },
+                                    { src: '/DSC04398.jpg', alt: 'Award Ceremony Highlight', label: 'Award Ceremony Highlight' },
+                                    { src: '/DSC04399.jpg', alt: 'Excellence in Service', label: 'Excellence in Service' },
+                                    { src: '/DSC04400.jpg', alt: 'Industry Recognition', label: 'Industry Recognition' },
+                                    { src: '/DSC04401.jpg', alt: 'Commitment to Excellence', label: 'Commitment to Excellence' },
+                                ].map((award) => (
+                                    <motion.div
+                                        key={award.src}
+                                        className="group relative rounded-xl overflow-hidden border border-white/[0.08] bg-white/[0.03]"
+                                        whileHover={{ y: -4, scale: 1.02 }}
+                                        transition={{ duration: 0.3 }}
+                                    >
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#C9A84C]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                        <Image
+                                            src={award.src}
+                                            alt={award.alt}
+                                            width={400}
+                                            height={500}
+                                            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                                        />
+                                        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-3">
+                                            <p className="text-white text-xs md:text-sm font-cinzel font-semibold text-center">
+                                                {award.label}
+                                            </p>
+                                        </div>
+                                    </motion.div>
+                                ))}
                             </div>
                         </div>
                     </ScrollReveal>
