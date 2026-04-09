@@ -54,7 +54,6 @@ export default function FeaturedListingsClient({ listings }: FeaturedListingsCli
                                                 src={listing.cover_image}
                                                 alt={listing.listing_name}
                                                 fill
-                                                unoptimized
                                                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                                                 sizes="(max-width: 768px) 100vw, 50vw"
                                             />

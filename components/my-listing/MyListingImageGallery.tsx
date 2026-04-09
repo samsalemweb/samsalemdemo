@@ -44,7 +44,6 @@ export default function MyListingImageGallery({ images, title }: MyListingImageG
                             src={selectedImage.url}
                             alt={selectedImage.alt || `${title} - Image ${selectedIndex + 1}`}
                             fill
-                            unoptimized
                             className="object-cover"
                             sizes="(max-width: 768px) 100vw, 60vw"
                             priority={selectedIndex === 0}
@@ -101,7 +100,6 @@ export default function MyListingImageGallery({ images, title }: MyListingImageG
                                 src={img.url}
                                 alt={img.alt || `${title} thumbnail ${idx + 1}`}
                                 fill
-                                unoptimized
                                 className="object-cover"
                                 sizes="96px"
                             />
