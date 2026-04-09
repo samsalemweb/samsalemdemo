@@ -45,7 +45,7 @@ export default function HeroSection() {
                     transition={{ duration: 1, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                 >
                     <Image
-                        src="https://res.cloudinary.com/djtzs6kuv/image/upload/v1773142137/WhatsApp_Image_2026-03-10_at_16.54.14-removebg-preview_nb6yfg.png"
+                        src="/sam.png"
                         alt="Sam Salem"
                         width={480}
                         height={680}
@@ -242,7 +242,7 @@ export default function HeroSection() {
                     transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                 >
                     <Image
-                        src="https://res.cloudinary.com/djtzs6kuv/image/upload/v1773142137/WhatsApp_Image_2026-03-10_at_16.54.14-removebg-preview_nb6yfg.png"
+                        src="/sam.png"
                         alt="Sam Salem"
                         width={320}
                         height={500}
