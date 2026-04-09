@@ -21,18 +21,16 @@ export default function HeroSection() {
             className="relative min-h-screen -mt-20 flex items-center overflow-hidden"
         >
             {/* Video background */}
-            <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover"
-            >
-                <source
-                    src="https://res.cloudinary.com/djtzs6kuv/video/upload/v1773580044/13984862_2560_1440_60fps_sxw3ev.mp4"
-                    type="video/mp4"
+            <div className="absolute inset-0 w-full h-full overflow-hidden">
+                <iframe
+                    src="https://player.vimeo.com/video/1181646062?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+                    className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2"
+                    style={{ aspectRatio: '16/9' }}
+                    frameBorder="0"
+                    allow="autoplay; fullscreen"
+                    allowFullScreen
                 />
-            </video>
+            </div>
 
             {/* Dark overlay */}
             <div className="absolute inset-0 bg-black/55" />
